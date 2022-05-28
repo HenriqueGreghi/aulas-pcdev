@@ -35,6 +35,7 @@ namespace AulasPCDev
                         break;
                     case "B":
                     case "b":
+                        int resulta = Subtrair(5, 3);
                         break;
                     case "0":
                     default:
@@ -48,6 +49,11 @@ namespace AulasPCDev
         {
             int soma = a + b;
             return soma;
+        }
+
+        static int Subtrair(int a, int b)
+        {
+            return a - b;
         }
     }
 }
