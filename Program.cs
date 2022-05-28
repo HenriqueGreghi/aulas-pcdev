@@ -13,6 +13,7 @@ namespace AulasPCDev
                 Console.WriteLine("Bem vindo ao meu programa");
                 Console.WriteLine("O que você deseja fazer?");
                 Console.WriteLine("A - Somar");
+                Console.WriteLine("B - Subtrair");
                 Console.WriteLine("0 - Sair do programa");
                 Console.WriteLine("Digite o letra da opção selecionada");
 
