@@ -1,59 +1,45 @@
-﻿using System;
+﻿using AulasPCDev.Models;
+using AulasPCDev.Services;
+using System;
 using System.Collections.Generic;
 
 namespace AulasPCDev
 {
-    internal class Program
+    public class Program
     {
+        private static UsuarioServices _usuarioServices = new UsuarioServices();
+
         static void Main(string[] args)
-        {             
+        {
+            Console.WriteLine("Bem vindo a locadora de vídeos");
+
             bool continuar = true;
             do
             {
-                Console.WriteLine("Bem vindo ao meu programa");
-                Console.WriteLine("O que você deseja fazer?");
-                Console.WriteLine("A - Somar");
-                Console.WriteLine("B - Subtrair");
-                Console.WriteLine("0 - Sair do programa");
-                Console.WriteLine("Digite o letra da opção selecionada");
+                Console.WriteLine("Digite o número da sua opção:");
+                Console.WriteLine("1 - Cadastrar usuários");
+                Console.WriteLine("2 - Listar usuários");
+                Console.WriteLine("3 - Cadastrar filme/série");
+                Console.WriteLine("4 - Alugar filme/série");
+                Console.WriteLine("5 - Devolver filme/série");
+                Console.WriteLine("Qualquer outro número para sair");
 
-                string resposta = Console.ReadLine();
+                int resposta = int.Parse(Console.ReadLine());
 
                 switch (resposta)
                 {
-                    case "A":
-                    case "a":
-                        Console.WriteLine("Digite o primeiro valor");
-                        int a = int.Parse(Console.ReadLine());
-
-                        Console.WriteLine("Digite o segundo valor:");
-                        int b = int.Parse(Console.ReadLine());
-
-                        int resultado = Adicionar(a, b);
-
-                        Console.WriteLine("O resultado é: " + resultado);
+                    case 1:
+                        _usuarioServices.CadastrarUsuario();
                         break;
-                    case "B":
-                    case "b":
-                        int resulta = Subtrair(5, 3);
+                    case 2:
+                        _usuarioServices.ListarUsuarios();
                         break;
-                    case "0":
                     default:
                         continuar = false;
                         break;
                 }
-            } while (continuar);
-        }
-
-        static int Adicionar(int a, int b)
-        {
-            int soma = a + b;
-            return soma;
-        }
-
-        static int Subtrair(int a, int b)
-        {
-            return a - b;
+            }while(continuar);
+            
         }
     }
 }
