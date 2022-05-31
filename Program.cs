@@ -8,6 +8,7 @@ namespace AulasPCDev
     public class Program
     {
         private static UsuarioServices _usuarioServices = new UsuarioServices();
+        private static GestaoServices _gestaoItens = new GestaoServices();
 
         static void Main(string[] args)
         {
@@ -33,6 +34,9 @@ namespace AulasPCDev
                         break;
                     case 2:
                         _usuarioServices.ListarUsuarios();
+                        break;
+                    case 3:
+                        _gestaoItens.Cadastrar();
                         break;
                     default:
                         continuar = false;
