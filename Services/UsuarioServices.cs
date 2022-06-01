@@ -1,4 +1,5 @@
 ﻿using AulasPCDev.Models;
+using AulasPCDev.Respository;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -7,14 +8,16 @@ namespace AulasPCDev.Services
 {
     public class UsuarioServices
     {
-        private static List<Usuario> _listaUsuarios = new List<Usuario>();
+        private static List<Usuario> _listaUsuarios = Armazenamento.Usuarios;
 
         public void ListarUsuarios()
         {
-            Console.WriteLine("NOME     - IDADE    - SALDO      - ÚLTIMO FILME ALUGADO");
+            Console.WriteLine("NOME - IDADE - SALDO");
             foreach (Usuario usuario in _listaUsuarios)
             {
-                Console.WriteLine(usuario.Nome + " - " + usuario.Idade + " - " + usuario.Conta.Saldo);
+                Console.WriteLine(usuario.Nome + " - " + 
+                    usuario.Idade + " - " + 
+                    usuario.Conta.Saldo);
             }
         }
 

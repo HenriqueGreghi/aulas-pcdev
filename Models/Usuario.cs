@@ -4,7 +4,7 @@ using System.Text;
 
 namespace AulasPCDev.Models
 {
-    internal class Usuario
+    public class Usuario
     {
         private readonly static int IDADE_MAIORIDADE = 18;
         public Usuario(int idade)
