@@ -12,5 +12,12 @@ namespace AulasPCDev.Respository
 
         public static List<Item> Biblioteca = 
             new List<Item>();
+        
+        public static List<Filme> Filmes =
+            new List<Filme>();
+
+        public static List<Serie> Series =
+            new List<Serie>();
     }
+   
 }

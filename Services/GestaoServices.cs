@@ -26,7 +26,7 @@ namespace AulasPCDev.Services
                 CadastrarSerie();
             }
         }
-        
+
         public void CadastrarFilme()
         {
             Filme filme = new Filme();
@@ -63,6 +63,46 @@ namespace AulasPCDev.Services
             serie.Temporadas = int.Parse(Console.ReadLine());
 
             _biblioteca.Add(serie);
+        }
+
+        public void Listar()
+        {
+            Console.WriteLine("O que deseja listar?");
+            Console.WriteLine("1 - Filme");
+            Console.WriteLine("2 - Série");
+            Console.WriteLine("Qualquer outro número para voltar");
+
+            int respotas = int.Parse(Console.ReadLine());
+            if (respotas == 1)
+            {
+                ListarFilmes();
+            }
+            if (respotas == 2)
+            {
+                ListarSeries();
+            }
+        }
+
+
+        private static List<Filme> _listaFilmes = Armazenamento.Filmes;
+        public void ListarFilmes()
+        {
+            Console.WriteLine("TITULO - QUANTIDADE - VALOR");
+            foreach (Filme filme in _listaFilmes)
+            {
+                Console.WriteLine($"{filme.Titulo} - {filme.Quantidade} - {filme.Valor}");
+            }
+
+        }
+        private static List<Serie> _listaSeries = Armazenamento.Series;
+        public void ListarSeries()
+        {
+            Console.WriteLine("TITULO - QUANTIDADE - VALOR");
+            foreach (Serie serie in _listaSeries)
+            {
+                Console.WriteLine($"{serie.Titulo} - {serie.Quantidade} - {serie.Valor}");
+            }
+
         }
     }
 }

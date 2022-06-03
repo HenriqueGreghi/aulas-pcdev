@@ -21,8 +21,9 @@ namespace AulasPCDev
                 Console.WriteLine("1 - Cadastrar usuários");
                 Console.WriteLine("2 - Listar usuários");
                 Console.WriteLine("3 - Cadastrar filme/série");
-                Console.WriteLine("4 - Alugar filme/série");
-                Console.WriteLine("5 - Devolver filme/série");
+                Console.WriteLine("4 - Listar filme/série");
+                Console.WriteLine("5 - Alugar filme/série");
+                Console.WriteLine("6 - Devolver filme/série");
                 Console.WriteLine("Qualquer outro número para sair");
 
                 int resposta = int.Parse(Console.ReadLine());
@@ -37,6 +38,9 @@ namespace AulasPCDev
                         break;
                     case 3:
                         _gestaoItens.Cadastrar();
+                        break;
+                    case 4:
+                        _gestaoItens.Listar();
                         break;
                     default:
                         continuar = false;
